@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections ?>
+
+<AnchorPane prefHeight="415.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MortgageController">
+   <children>
+      <SplitPane dividerPositions="0.4513556618819777" layoutX="153.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="houseCostLbl" layoutX="58.0" layoutY="28.0" text="Cost of House:" />
+                  <Label fx:id="creditScoreLbl" layoutX="65.0" layoutY="75.0" text="Credit Score:" />
+                  <Label fx:id="termLbl" layoutX="85.0" layoutY="133.0" text="Term:" />
+                  <Label fx:id="incomeLbl" layoutX="59.0" layoutY="238.0" text="Annual Income:" />
+                  <Label fx:id="expensesLbl" layoutX="33.0" layoutY="275.0" text="Monthly Debt Expenses:" />
+                  <Label fx:id="mortgagePaymentLbl" layoutX="69.0" layoutY="182.0" prefHeight="16.0" prefWidth="102.0" />
+                  <Label fx:id="affordLbl" layoutX="26.0" layoutY="300.0" prefHeight="26.0" prefWidth="222.0" />
+                  <Label fx:id="maxMortgageLbl" layoutX="14.0" layoutY="345.0" prefHeight="26.0" prefWidth="257.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="436.0">
+               <children>
+                  <TextField fx:id="txtHouseCost" layoutX="14.0" layoutY="23.0" />
+                  <TextField fx:id="txtCreditScore" layoutX="14.0" layoutY="78.0" />
+                  <ComboBox fx:id="cmbTerm" layoutX="22.0" layoutY="129.0" prefWidth="150.0">
+    				<items>
+        			<FXCollections fx:factory="observableArrayList">
+            		<String fx:value="15" />
+            		<String fx:value="30" />
+        			</FXCollections>
+   					 </items>
+				  </ComboBox>
+                  <Button fx:id="calculateButton" layoutX="14.0" layoutY="176.0" mnemonicParsing="false" onAction="#calculatePMT" text="Calculate Mortgage Payment" />
+                  <TextField fx:id="txtIncome" layoutX="14.0" layoutY="233.0" />
+                  <TextField fx:id="txtExpenses" layoutX="15.0" layoutY="272.0" />
+                  <Button fx:id="affordButton" layoutX="33.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleAfford" text="Can You Afford It?" />
+                  <Button fx:id="resetButton" layoutX="204.0" layoutY="325.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
